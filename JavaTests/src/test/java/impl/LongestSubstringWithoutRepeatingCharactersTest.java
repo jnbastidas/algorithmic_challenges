@@ -15,12 +15,12 @@ public class LongestSubstringWithoutRepeatingCharactersTest {
 
 	@Test
 	public void test1() {
-		Assertions.assertEquals("dabc", this.longestSubstringWithoutRepeatingCharacters.getTheLongestSubstringWithoutRepeatingCharacters("abcabcdabc"));
+		Assertions.assertEquals("abcd", this.longestSubstringWithoutRepeatingCharacters.getTheLongestSubstringWithoutRepeatingCharacters("abcabcdabc"));
 	}
 
 	@Test
 	public void test2() {
-		Assertions.assertEquals("abcdef", this.longestSubstringWithoutRepeatingCharacters.getTheLongestSubstringWithoutRepeatingCharacters("abcdef"));
+		Assertions.assertEquals("abcdef", this.longestSubstringWithoutRepeatingCharacters.getTheLongestSubstringWithoutRepeatingCharacters("abcdefaabcdef"));
 	}
 
 	@Test
@@ -36,5 +36,15 @@ public class LongestSubstringWithoutRepeatingCharactersTest {
 	@Test
 	public void test5() {
 		Assertions.assertEquals("b", this.longestSubstringWithoutRepeatingCharacters.getTheLongestSubstringWithoutRepeatingCharacters("bbbbbbb"));
+	}
+
+	@Test
+	public void test6() {
+		Assertions.assertEquals("be coding", this.longestSubstringWithoutRepeatingCharacters.getTheLongestSubstringWithoutRepeatingCharacters("always be coding"));
+	}
+
+	@Test
+	public void test7() {
+		Assertions.assertEquals("NGISAWE", this.longestSubstringWithoutRepeatingCharacters.getTheLongestSubstringWithoutRepeatingCharacters("CODINGISAWESOME"));
 	}
 }

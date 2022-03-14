@@ -1,6 +1,8 @@
 package impl;
 
+import java.util.ArrayList;
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -19,27 +21,34 @@ public class LongestSubstringWithoutRepeatingCharacters {
 	}
 
 	private String linealSolution(final String input) {
+		String longestSubString = "";
 		int i = 0;
 		int j = 0;
 		final int n = input.length() - 1;
-		final Set<Character> visitedCharacters = new LinkedHashSet<>();
+		String visitedCharacters = "";
+
+		int lastPositionRemoved = 0;
 		while(i <= n && j <= n) {
-			final Character inCharacter = input.charAt(j);
-			if (visitedCharacters.add(inCharacter)) {
+			final char inCharacter = input.charAt(j);
+			if (!visitedCharacters.contains(String.valueOf(inCharacter))) {
+				visitedCharacters = visitedCharacters.concat(String.valueOf(inCharacter));
 				j++;
 
-				// To go saving the first coincidence
-				/*final String currentSubString = input.substring(i, j);
+				// Go keeping the bigest first coincidence
+				final String currentSubString = input.substring(i, j);
 				if (longestSubString.length() < currentSubString.length()) {
 					longestSubString = currentSubString;
-				}*/
+				}
 			} else {
-				visitedCharacters.remove(inCharacter);
-				i++;
+				final int inCharacterPos = visitedCharacters.indexOf(inCharacter);
+				visitedCharacters = visitedCharacters.substring(inCharacterPos + 1);
+				lastPositionRemoved = lastPositionRemoved + inCharacterPos;
+
+				i = i + lastPositionRemoved + 1;
 			}
 		}
 
-		return visitedCharacters.stream().map(c -> String.valueOf((char)c)).collect(Collectors.joining());
+		return longestSubString;
 	}
 
 	private String cuadraticSoution(final String input) {
