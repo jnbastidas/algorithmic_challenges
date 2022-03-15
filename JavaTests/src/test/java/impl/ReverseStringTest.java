@@ -15,21 +15,18 @@ public class ReverseStringTest {
 	@Test
 	public void test1() {
 		final String rdo = this.reverseString.getReverseString("54321");
-		System.out.println(rdo);
 		Assertions.assertEquals("12345", rdo);
 	}
 
 	@Test
 	public void test2() {
 		final String rdo = this.reverseString.getReverseString(null);
-		System.out.println(rdo);
 		Assertions.assertNull(rdo);
 	}
 
 	@Test
 	public void test3() {
 		final String rdo = this.reverseString.getReverseString("");
-		System.out.println(rdo);
 		Assertions.assertEquals("", rdo);
 	}
 }
