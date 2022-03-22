@@ -1,4 +1,4 @@
-package epam;
+package impl;
 
 public class SecondSmallestElementInArray {
 	public int getSecondSmallestElementInArray(final int[] input) {
