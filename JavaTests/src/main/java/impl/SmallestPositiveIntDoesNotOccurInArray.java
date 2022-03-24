@@ -1,6 +1,8 @@
 package impl;
 
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * that, given an array A of N integers, returns the smallest positive integer (greater than 0) that does not occur in A.
@@ -19,21 +21,20 @@ import java.util.Arrays;
 
 public class SmallestPositiveIntDoesNotOccurInArray {
 	public int solution(final int[] A) {
+		int n = A.length;
 
-		if (A == null && A.length == 0) {
-			return 1;
+		boolean[] present = new boolean[n + 1];
+		for (int i = 0; i < n; i++) {
+			if (A[i] > 0 && A[i] <= n)
+				present[A[i]] = true;
 		}
 
-		Arrays.sort(A);
-		int rdo = 0;
-		//1, x, 3, 4
-		for (int i = 0; i < A.length; i++) {
-			rdo++;
-			if (A[i] < rdo) {
-				rdo = A[i];
+		for (int i = 1; i <= n; i++) {
+			if (!present[i]) {
+				return i;
 			}
 		}
 
-		return rdo <= 0 ? 1 : rdo;
+		return n + 1;
 	}
 }

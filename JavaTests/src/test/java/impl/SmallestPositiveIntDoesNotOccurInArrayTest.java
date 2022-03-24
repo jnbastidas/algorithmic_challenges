@@ -15,7 +15,7 @@ public class SmallestPositiveIntDoesNotOccurInArrayTest {
 
 	@Test
 	public void test1() {
-		Assertions.assertEquals(5, this.smallestPositiveIntDoesNotOccurInArray.solution(new int[]{1, 3, 6, 4, 1, 2}));
+		Assertions.assertEquals(4, this.smallestPositiveIntDoesNotOccurInArray.solution(new int[]{3, 1, 2, 3, 0, 5, 6}));
 	}
 
 	@Test
@@ -24,7 +24,27 @@ public class SmallestPositiveIntDoesNotOccurInArrayTest {
 	}
 
 	@Test
+	public void test21() {
+		Assertions.assertEquals(3, this.smallestPositiveIntDoesNotOccurInArray.solution(new int[]{1, 2}));
+	}
+
+	@Test
 	public void test3() {
 		Assertions.assertEquals(1, this.smallestPositiveIntDoesNotOccurInArray.solution(new int[]{-1, -3}));
+	}
+
+	@Test
+	public void test4() {
+		Assertions.assertEquals(2, this.smallestPositiveIntDoesNotOccurInArray.solution(new int[]{1}));
+	}
+
+	@Test
+	public void test5() {
+		Assertions.assertEquals(1, this.smallestPositiveIntDoesNotOccurInArray.solution(new int[]{2}));
+	}
+
+	@Test
+	public void test6() {
+		Assertions.assertEquals(1, this.smallestPositiveIntDoesNotOccurInArray.solution(new int[]{3}));
 	}
 }
