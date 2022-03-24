@@ -1,9 +1,5 @@
 package impl;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
-
 /**
  * that, given an array A of N integers, returns the smallest positive integer (greater than 0) that does not occur in A.
  *
