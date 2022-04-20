@@ -27,7 +27,7 @@ public class LongestSubstringWithoutRepeatingCharacters {
 				visitedCharacters = visitedCharacters.concat(String.valueOf(inCharacter));
 				j++;
 
-				// Go keeping the bigest first coincidence
+				// Go keeping the biggest first coincidence
 				final String currentSubString = input.substring(i, j);
 				if (longestSubString.length() < currentSubString.length()) {
 					longestSubString = currentSubString;
